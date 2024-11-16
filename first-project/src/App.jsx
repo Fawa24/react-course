@@ -2,10 +2,13 @@ import { CORE_CONCEPTS } from "./data";
 import Header from "./Components/Header/Header";
 import CoreConcept from "./Components/CoreConcept/CoreConcept";
 import TabButton from "./Components/TabButton/TabButton";
+import { useState } from "react";
 
 function App() {
+  const [ selectedTab, setselectedTab ] = useState('Components');
+
   function clickHandler(selectedTab) {
-    console.log(selectedTab);
+    setselectedTab(selectedTab);
   }
 
   return (
@@ -30,6 +33,7 @@ function App() {
             <TabButton onClick={() => clickHandler('State')}>State</TabButton>
           </menu>
         </section>
+        <p>{selectedTab}</p>
       </main>
     </div>
   );
