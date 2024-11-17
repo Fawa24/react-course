@@ -5,7 +5,7 @@ import TabButton from "./Components/TabButton/TabButton";
 import { useState } from "react";
 
 function App() {
-  const [selectedTab, setselectedTab ] = useState('components');
+  const [selectedTab, setselectedTab ] = useState();
 
   function clickHandler(selectedTab) {
     setselectedTab(selectedTab);
@@ -33,13 +33,15 @@ function App() {
             <TabButton onClick={() => clickHandler('state')}>State</TabButton>
           </menu>
         </section>
+        {selectedTab && 
         <div id="tab-content">
           <h3>{EXAMPLES[selectedTab].title}</h3>
           <p>{EXAMPLES[selectedTab].description}</p>
           <pre>
             <code>{EXAMPLES[selectedTab].code}</code>
           </pre>
-        </div>
+        </div>}
+        {!selectedTab && <p>Please select one of the topic above to display info about.</p>}
       </main>
     </div>
   );
