@@ -3,8 +3,6 @@ import Examples from "./Components/Examples/Examples";
 import CoreConcepts from "./Components/CoreConcepts/CoreConcepts";
 
 function App() {
-  
-
   return (
     <>
       <Header />
