@@ -23,12 +23,16 @@ export default function Examples() {
   return(
     <>
     <Section title={'Examples'}id="examples">
-      <Tabs buttons={<><TabButton onClick={() => clickHandler('components')} isSelected={selectedTab === 'components'}>Components</TabButton>
-        <TabButton onClick={() => clickHandler('jsx')} isSelected={selectedTab === 'jsx'}>JSX</TabButton>
-        <TabButton onClick={() => clickHandler('props')} isSelected={selectedTab === 'props'}>Props</TabButton>
-        <TabButton onClick={() => clickHandler('state')}  isSelected={selectedTab === 'state'}>State</TabButton></>}>
-        {tabContent}
-        {!selectedTab && <p>Please select one of the topic above to display info about.</p>}
+      <Tabs 
+      buttons={
+        <><TabButton onClick={() => clickHandler('components')} isSelected={selectedTab === 'components'}>Components</TabButton>
+          <TabButton onClick={() => clickHandler('jsx')} isSelected={selectedTab === 'jsx'}>JSX</TabButton>
+          <TabButton onClick={() => clickHandler('props')} isSelected={selectedTab === 'props'}>Props</TabButton>
+          <TabButton onClick={() => clickHandler('state')}  isSelected={selectedTab === 'state'}>State</TabButton>
+        </>}
+      buttonsContainer={'menu'}>
+      {tabContent}
+      {!selectedTab && <p>Please select one of the topic above to display info about.</p>}
       </Tabs>
     </Section>
     </>
